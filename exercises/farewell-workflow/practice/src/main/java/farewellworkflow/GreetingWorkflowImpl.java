@@ -1,9 +1,9 @@
 package farewellworkflow;
 
+import java.time.Duration;
+
 import io.temporal.activity.ActivityOptions;
 import io.temporal.workflow.Workflow;
-
-import java.time.Duration;
 
 public class GreetingWorkflowImpl implements GreetingWorkflow {
 
@@ -16,8 +16,7 @@ public class GreetingWorkflowImpl implements GreetingWorkflow {
     @Override
     public String greetSomeone(String name){
         String spanishGreeting = activities.greetInSpanish(name);
-        // TODO: uncomment the line below and change it to execute the Activity method you created
-        //String spanishFarewell = activities.greetInSpanish(name);
+        String spanishFarewell = activities.farewellInSpanish(name);
 
         return "\n" + spanishGreeting + "\n" + spanishFarewell;
     }
